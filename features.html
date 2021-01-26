@@ -154,95 +154,41 @@
 
 
         <!-- ***************** Body Ends Here ***************************** -->
-        <div class="footer">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-3">
-                      <div class="row fot-titl">
-                        <b>News Letter</b>
-                      </div>
-                      <div class="input-group nedk">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon ccess" id="basic-addon2">></span>
-</div>
-                  </div>
-                   <div class="col-sm-3">
-                      <div class="row fot-titl">
-                        <b>Quick Links</b>
-                      </div>
-                      <ul class="footer-link">
-                        <li>View Demo</li>
-                        <li>View Prising</li>
-                        <li>Quick Download</li>
-                        <li>View Mobile</li>
-                        <li>Buy Now</li>
-                      </ul>
-                  </div>
-                   <div class="col-sm-3">
-                       <div class="row fot-titl">
-                        <b>Legal</b>
-                      </div>
-                      <ul class="footer-link">
-                        <li>Privacy Policy</li>
-                        <li>Terns of Users</li>
-                        <li>Treadmarks</li>
-                        
-                      </ul>
-                  </div>
-                   <div class="col-sm-3">
-                    <div class="row fot-titl">
-                        <b>Information</b>
-                      </div>
-                      <ul class="footer-link">
-                        <li>Suport</li>
-                        <li>Developer</li>
-                        <li>Blog</li>
-                        <li>Newsletter</li>
-                        <li>Web Annalysis</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </div>
-
-        <div class="copy card">
-        <div class="container">
-            <a> All Rights Reserved © Liontemplates  | </a><a> Designed &amp; Developed by</a>  <a href="http://smart-eye.in/">Liontemplates</a><img alt="smart_eye_logo" src="http://smart-eye.in/assets/images/ico.png">
-            
-             <a class="hidden-xs"><i class="fa fa-github-alt"></i></a>
-             <a href="https://plus.google.com/u/0/117068976814294842154" class="hidden-xs"><i class="fa fa-google-plus"></i></a>
-             <a class="hidden-xs"><i class="fa fa-pinterest"></i></a>
-             <a href="https://twitter.com/liontemplates15" class="hidden-xs"><i class="fa fa-twitter"></i></a>
-             <a href="https://www.facebook.com/LionTemplatescom-1575694889111580" class="hidden-xs"><i class="fa fa-facebook"></i></a>
-        
-        </div>
-    
-    </div>
-
-          
-      </div>
-  </body>
-
-
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-   
-     
-    
-    <script type="text/javascript">
-      $(document).ready(function(){
-          $.material.init();
-      })
-
-    </script>
-    <script type="text/javascript">
-$(function(){
-    
-});
-
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
 </script>
-  </body>
+<body>
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div> 
 
-<!-- Mirrored from localhost/hotstar/home by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2017 07:36:12 GMT -->
+<script>
+includeHTML();
+</script>
+
+</body>
 </html>
