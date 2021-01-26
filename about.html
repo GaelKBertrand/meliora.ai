@@ -1,74 +1,42 @@
-
-
-
 <!DOCTYPE html>
-<html lang="en">
-  
-<!-- Mirrored from localhost/hotstar/home by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2017 07:25:35 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product Landing Page Website TEmplate</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-  <body ng-app="app">
-      <div class="container-fluid">
-        <div class="top-port shado-1">
-            <div class="top-black">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-sm-6 hidden-xs">
-                          <ul class="sm-linl">
-                              <li><i class="fa fa-facebook"></i></li>
-                              <li><i class="fa fa-twitter"></i></li>
-                              <li><i class="fa fa-google-plus"></i></li>
-                              <li><i class="fa fa-linkedin"></i></li>
-                          </ul>
-                      </div>
-                       <div class="col-sm-6">
-                          <ul class="in-contact moble-in-contact">
-                            <!-- changing the following addresses -->
-                              <li><i class="fa fa-phone"></i> +91 8571085309</li>
-                              <li><i class="fa fa-envelope"></i> melioa.ai@gmail.com</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-             </div>
-              <div class="top-nav-pot">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-sm-3 logo">
-                          <b>Snap Landing Page</b>
-                        <a class="visible-xs" data-toggle="collapse" data-target="#mu">   <i class="fa t-ico fa-list"></i></a>
-                      </div>
-                       <div class="col-sm-9 ">
-                          <ul  class="nav-list hidden-xs">
-                             <li><a href="contact.html">Contact Us</a></li>
-                              <li><a href="features.html">Features</a></li>
-                              <li><a href="about.html">About Us</a></li>
-                              <li><a href="index.html">Home</a></li>
-                              
-                          </ul>
+<html>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+<body>
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div> 
 
-                          <!-- Mobile Menu Start -->
-                           <ul id="mu" class="nav-list-1">
-                              <li><a href="contact.html">Home</a></li>
-                              <li><a href="features.html">About Us</a></li>
-                              <li><a href="about.html">Features</a></li>
-                              <li><a href="index.html">Contact Us</a></li>
-                          </ul>
-                          <!-- Mobile Menu Ends -->
-                      </div>
-                  </div>
-              </div>
-             </div>
-        </div>
+<script>
+includeHTML();
+</script>
 
+</body>
         <!-- ***************** Header Ends Here ***************************** -->
         <div class="slider">
             <div class="container">
