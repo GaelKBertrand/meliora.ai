@@ -37,7 +37,7 @@ body{font-family: 'Myriad Pro';background-color: #7a4b9e;}
 .top-black{background-color: #d4b5e8}
 .sm-linl li{float: left;list-style: none; color: #FFF; padding: 10px;}
 .in-contact li{float: right;list-style: none;color: #FFF; padding: 10px;}
-.nav-list li{float: right;list-style: none;padding: 20px 40px; font-size: 17px;}
+.nav-list li{float: right;list-style: 'Roboto', sans-serif;padding: 20px 40px; font-size: 17px; }
 .nav-list li a{color: #262626;}
 .logo{padding:16px;}
 .logo b{font-weight: 600;color: #636666;font-size: 22px;}
