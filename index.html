@@ -69,7 +69,7 @@
 </div>
 
 
-<div class="features">
+<div class="features" onload="resizeFeatureBoxes()">
     <div class="container">
         <div class="title-port center">
             <p style="color: #46336d;font-family: 'Roboto', sans-serif;">Some of Our Key Features</p>
@@ -107,8 +107,9 @@
                 <div class="card feature-box">
                     <i class="fa fa-code-fork"></i>
                     <h3>Output highly informative data</h3>
-                    <p>The software can generate high quality statistics within ten minutes that medical professionals
-                        can use to make more informed decisions about the patient's condition.</p>
+                    <p style="color: #181328;font-family: 'Roboto', sans-serif;">The software can generate high quality
+                        statistics within ten minutes that medical professionals can use to make more informed decisions
+                        about the patient's condition.</p>
                 </div>
             </div>
 
@@ -171,7 +172,8 @@
                 <center><p style="color: #181328;font-family: 'Roboto', sans-serif; font-size:20px;">
                     We are extremely grateful to the research team at Boston University headed by Dr Shangran Qiu, who
                     did an outstanding job in building the underlying deep learning framework and testing it in various
-                    conditions. Here's the <a href="https://academic.oup.com/brain/article/143/6/1920/5827821"> link </a> to the original paper.
+                    conditions. Here's the <a href="https://academic.oup.com/brain/article/143/6/1920/5827821">
+                    link </a> to the original paper.
 
                 </p></center>
                 <p>
@@ -343,6 +345,22 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+        }
+
+        function resizeFeatureBoxes() {
+
+            let elements = document.getElementsByClassName("card feature-box");
+            let maxHeight = -1;
+            for (let i = 0, len = elements.length; i < len; i++) {
+                let elHeight = elements[i].clientHeight
+                if (elHeight > maxHeight) {
+                    maxHeight = elHeight
+                }
+            }
+            for (let i = 0, len = elements.length; i < len; i++) {
+                elements[i].style.height = "" + maxHeight
+                elements[i].textContent = "" + maxHeight
+            }
         }
     </script>
 
