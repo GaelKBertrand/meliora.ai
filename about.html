@@ -1,150 +1,161 @@
 <!DOCTYPE html>
 <html>
 <script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
         }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
+    };
 </script>
 <body>
-<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div> 
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div>
 
 <script>
-includeHTML();
+    includeHTML();
 </script>
 
 </body>
-        <!-- ***************** Header Ends Here ***************************** -->
-        <div class="slider">
-            <div class="container">
-                
-                <div class="row center hjnkj">
-                    <b>About Us</b>
-                    <p>Home <i class="fa fa-angle-double-right"></i>
-                       About Us
-                    </p>
-                   
-                </div>
-                 
-            </div>
+<!-- ***************** Header Ends Here ***************************** -->
+<div class="slider">
+    <div class="container">
+
+        <div class="row center hjnkj">
+            <b>About Us</b>
+            <p>Home <i class="fa fa-angle-double-right"></i>
+                About Us
+            </p>
+
         </div>
 
-        
+    </div>
+</div>
 
 
-        <div class="packages">
-             <div class="container">
-                <div class="title-port center">
-                     <p>About Us</p>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 abut">
-                        <img src="assets/images/landing.png">
+<div class="packages">
+    <div class="container">
+        <div class="title-port center">
+            <p>About Us</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 abut">
+                <img src="assets/images/landing.png">
+            </div>
+            <div style="font-size:20px;background-color:#7a4b9e;" class="col-sm-6 abut-tst">
+                <p style="color:white;padding:25px;">
+                    We harness the power of technology to assist medical professionals in the early detection of
+                    Alzheimer's disease in patients. Our culture has been structured to understand and harness
+                    artificial intelligence to assist humans and offer better solutions.
+                </p>
+                <p style="color:white;padding-bottom:25px;padding-left:25px;padding-right:25px;">
+                    Meliora is a medical software developed to assist in a rapid diagnosis of Alzheimer's disease. It
+                    uses neuroimaging technology and artificial intelligence to do a neurological assessment and detect
+                    neuropathological threats that predate severe Alzheimer's cases in patients.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="container">
+                    <div class="title-port center">
+                        <p> The Team</p>
                     </div>
-                <div style="font-size:20px;background-color:#7a4b9e;" class="col-sm-6 abut-tst">
-                  <p style="color:white;padding:25px;">
-                         We harness the power of technology to assist medical professionals in the early detection of Alzheimer's disease in patients. Our culture has been structured to understand and harness artificial intelligence to assist humans and offer better solutions.
-                  </p>
-                  <p style="color:white;padding-bottom:25px;padding-left:25px;padding-right:25px;">
-                         Meliora is a medical software developed to assist in a rapid diagnosis of Alzheimer's disease. It uses neuroimaging technology and artificial intelligence to do a neurological assessment and detect neuropathological threats that predate severe Alzheimer's cases in patients.
-                  </p>
-                     </div>
 
-        <div class="features">
-            <div class="container">
-                 <div class="title-port center">
-                     <p> The Team</p>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="team-img card">
+                                <img src="assets/images/team-memb1.jpg">
+                                <p>Bertrand - CEO & AI Engineer</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="team-img card">
+                                <img src="assets/images/DanyloLi.jpg">
+                                <p>Danylo Liakhovetskyi - Cofounder and Software Engineer</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="team-img card">
+                                <img src="assets/images/team-memb3.jpg">
+                                <p>xy - Developer</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="team-img card">
+                                <img src="assets/images/team-memb4.jpg">
+                                <p>Anitha Saran - Customer Support</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-           
-                <div class="row">
-                   <div class="col-sm-3">
-                     <div class="team-img card">
-                        <img src="assets/images/team-memb1.jpg">
-                        <p>Bertrand - CEO & AI Engineer</p>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                       <div class="team-img card">
-                        <img src="assets/images/team-memb2.jpg">
-                        <p>Daniel Liakhovetskyi - Software Engineer</p>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                       <div class="team-img card">
-                        <img src="assets/images/team-memb3.jpg">
-                        <p>xy - Developer</p>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                       <div class="team-img card">
-                        <img src="assets/images/team-memb4.jpg">
-                        <p>Anitha Saran - Customer Support</p>
-                     </div>
-                   </div>
-                </div>  
-             </div>  
-        </div>    
+            </div>
 
-
-
-        <!-- ***************** Body Ends Here ***************************** -->
+        </div>
+    </div>
+</div>
+<!-- ***************** Body Ends Here ***************************** -->
 <script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
         }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
+    };
 </script>
 <body>
-<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div> 
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div>
 
 <script>
-includeHTML();
+    includeHTML();
 </script>
 
 </body>
