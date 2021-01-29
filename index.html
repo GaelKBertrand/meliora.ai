@@ -1,348 +1,396 @@
 <!DOCTYPE html>
 <script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
         }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
+    };
 </script>
 <body>
-<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div> 
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div>
 
 <script>
-includeHTML();
+    includeHTML();
 </script>
 
 </body>
-        <!-- ***************** Header Ends Here ***************************** -->
-        <div class="slider">
-            <div class="container">
-                <div class="row titl-desic">
-                    <p style="color:white;font-size:30px; font-family: 'Roboto', sans-serif;">Artificially Intelligent Software That Diagnoses Alzheimer's Disease Ten Times Faster Than Humans</p>
-                    <div class="col-sm-10 float-auto">
-                         <p style="color:white;font-size:20px; font-family: 'Roboto', sans-serif;"> Meliora uses Deep Learning and Magnetic Resonance Imaging (MRI) images of the brain to detect pathophysiological conditions that predate Alzheimer’s Disease very early before they become a severe case with a 98 % accuracy rate.</p>
-                    </div>
-		    <div class="col-sm-10 float-auto">
-                         <p style="color:white; font-size:20px; font-family: 'Roboto', sans-serif;"> The Deep Learning model is heavily trained on clinically diagnosed Alzheimer's disease subjects and other clinically normal subjects from various, highly credible, medical approved databases. 
-</p>
-                    </div>
-			
-                   
-                </div>
-                <div class="row slid-img center">
-                </div>
-                    </div>
+<!-- ***************** Header Ends Here ***************************** -->
+<div class="slider">
+    <div class="container">
+        <div class="row titl-desic">
+            <p style="color:white;font-size:30px; font-family: 'Roboto', sans-serif;">Artificially Intelligent Software
+                That Diagnoses Alzheimer's Disease Ten Times Faster Than Humans</p>
+            <div class="col-sm-10 float-auto">
+                <p style="color:white;font-size:20px; font-family: 'Roboto', sans-serif;"> Meliora uses Deep Learning
+                    and Magnetic Resonance Imaging (MRI) images of the brain to detect pathophysiological conditions
+                    that predate Alzheimer’s Disease very early before they become a severe case with a 98 % accuracy
+                    rate.</p>
+            </div>
+            <div class="col-sm-10 float-auto">
+                <p style="color:white; font-size:20px; font-family: 'Roboto', sans-serif;"> The Deep Learning model is
+                    heavily trained on clinically diagnosed Alzheimer's disease subjects and other clinically normal
+                    subjects from various, highly credible, medical approved databases.
+                </p>
+            </div>
+
+
+        </div>
+        <div class="row slid-img center">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="features">
+    <div class="container">
+        <div class="title-port center">
+            <p style="color: #46336d;font-family: 'Roboto', sans-serif;">Some of Our Key Features</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card feature-box">
+                    <i class="fa fa-bug"></i>
+                    <h3>Trained using MRI scans and high-quality data</h3>
+                    <p style="color: #181328;font-family: 'Roboto', sans-serif;">The deep learning model used in the
+                        software is trained using high quality data from various internationally recognized Alzheimer’s
+                        disease care centers.</p>
                 </div>
             </div>
+            <div class="col-sm-3">
+                <div class="card feature-box">
+                    <i class="fa fa-cog"></i>
+                    <h3>Scans brain MRI scans fast</h3>
+                    <p style="color: #181328;font-family: 'Roboto', sans-serif;">The software is capable of scanning MRI
+                        Images quite quickly and saves medical professionals the effort of looking at MRI scans to make
+                        decisions.</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card feature-box">
+                    <i class="fa fa-book"></i>
+                    <h3>High Accuracy</h3>
+                    <p style="color: #181328;font-family: 'Roboto', sans-serif;">The software is capable of
+                        outperforming humans in deciding on a patient's condition with an accuracy of 98 %.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card feature-box">
+                    <i class="fa fa-code-fork"></i>
+                    <h3>Output highly informative data</h3>
+                    <p>The software can generate high quality statistics within ten minutes that medical professionals
+                        can use to make more informed decisions about the patient's condition.</p>
+                </div>
+            </div>
+
+
         </div>
-		    
-
-        <div class="features">
-            <div class="container">
-                 <div class="title-port center">
-                     <p style="color: #46336d;font-family: 'Roboto', sans-serif;">Some of Our Key Features</p>
-                </div>
-           
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card feature-box">
-                        <i class="fa fa-bug"></i>
-                        <h3>Trained using MRI scans and high-quality data</h3>
-                        <p style="color: #181328;font-family: 'Roboto', sans-serif;">The deep learning model used in the software is trained using high quality data from various internationally recognized Alzheimer’s disease care centers.</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card feature-box">
-                        <i class="fa fa-cog"></i>
-                        <h3>Scans brain MRI scans fast</h3>
-                        <p style="color: #181328;font-family: 'Roboto', sans-serif;">The software is capable of scanning MRI Images quite quickly and saves medical professionals the effort of looking at MRI scans to make decisions.</p>
-                    </div>
-                </div>
-                 <div class="col-sm-3">
-                    <div class="card feature-box">
-                        <i class="fa fa-book"></i>
-                        <h3>High Accuracy</h3>
-                        <p style="color: #181328;font-family: 'Roboto', sans-serif;">The software is capable of outperforming humans in deciding on a patient's condition with an accuracy of 98 %. 
-</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card feature-box">
-                        <i class="fa fa-code-fork"></i>
-                        <h3>Output highly informative data</h3>
-                        <p>The software can generate high quality statistics within ten minutes that medical professionals can use to make more informed decisions about the patient's condition.</p>
-                    </div>
-                </div>
-                 
-                 
-                
-                 
-            </div>  
-             </div>  
+    </div>
+</div>
+<div class="sign-up-step">
+    <div class="container">
+        <div class="title-port center">
+            <p style="color: #181328;font-family: 'Roboto', sans-serif;">Downloads</p>
         </div>
-	<div class="sign-up-step">
-          <div class="container">
-            <div class="title-port center">
-              <p style="color: #181328;font-family: 'Roboto', sans-serif;">Downloads</p>
-                </div>
-		<div>
-		<p style="color: #181328;font-family: 'Roboto', sans-serif; font-size:20px;float:left">Desktop Application<br><br>High Quality Data Output<br><br>Medical Professional Approved Software<br><br>Patient Handling<br><br>Professionally Designed Interface<br></p>
-			<p style="padding-left:700px; align:right; font-size:30px;">Windows Download</p>
-			<p style="padding-left: 712px;padding-top;30px;font-size:15px;">Click the Button below To Download<br><img src="assets/images/windows logo.png" <="" p="">
-			<style>
-			.button {
-			  background-color: #000000; /* Green */
-			  border: none;
-			  color: white;
-			  padding: 20px;
-			  text-align: center;
-			  text-decoration: none;
-			  display: inline-block;
-			  font-size: 16px;
-			  margin-top:4px;
-			  margin-right:80px;
-			  margin-bottom:4px;
-			  margin-left:80px;
-			  cursor: pointer;
-			  padding-left: 20px;
-			}
-			.button3 {border-radius: 8px;}
-			</style>
+        <div>
+            <p style="color: #181328;font-family: 'Roboto', sans-serif; font-size:20px;float:left">Desktop
+                Application<br><br>High Quality Data Output<br><br>Medical Professional Approved Software<br><br>Patient
+                Handling<br><br>Professionally Designed Interface<br></p>
+            <p style="padding-left:700px; align:right; font-size:30px;">Windows Download</p>
+            <p style="padding-left: 712px;padding-top;30px;font-size:15px;">Click the Button below To Download<br><img
+                    src="assets/images/windows logo.png" <="" p="">
+                <style>
+                    .button {
+                        background-color: #000000; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin-top: 4px;
+                        margin-right: 80px;
+                        margin-bottom: 4px;
+                        margin-left: 80px;
+                        cursor: pointer;
+                        padding-left: 20px;
+                    }
+
+                    .button3 {
+                        border-radius: 8px;
+                    }
+                </style>
 
 
-			<button class="button button3">Download</button>
-			</p>
-			<p style="padding-left:640px">By downloading, You Agree To Our Tearms and Conditions</p>
-			
+                <button class="button button3">Download</button>
+            </p>
+            <p style="padding-left:640px">By downloading, You Agree To Our Tearms and Conditions</p>
+
             <p style="background-image:white;">
-          <!---SECTION ONE HERE-->
-          </div>  
+                <!---SECTION ONE HERE-->
         </div>
+    </div>
 
 
-        <div class="packages">
-             <div class="container">
-                <div class="title-port center">
-                     <p style="color: #181328;font-family: 'Roboto', sans-serif;">Acknowledgments</p>
-                </div>
-		<div>
-		<center><p style="color: #181328;font-family: 'Roboto', sans-serif; font-size:20px;"> We are extremely grateful to the research team at Boston University headed by Dr Shangran Qiu, who did an outstanding job in building the underlying deep learning framework and testing it in various conditions.
- </p></center><p>
-            </p><p style="background-image:white;">
+    <div class="packages">
+        <div class="container">
+            <div class="title-port center">
+                <p style="color: #181328;font-family: 'Roboto', sans-serif;">Acknowledgments</p>
+            </div>
+            <div>
+                <center><p style="color: #181328;font-family: 'Roboto', sans-serif; font-size:20px;">
+                    We are extremely grateful to the research team at Boston University headed by Dr Shangran Qiu, who
+                    did an outstanding job in building the underlying deep learning framework and testing it in various
+                    conditions. Here's the <a href="https://academic.oup.com/brain/article/143/6/1920/5827821"> link </a> to the original paper.
 
-                <!---SECTION TWO GOES HERE-->
+                </p></center>
+                <p>
+                </p>
+                <p style="background-image:white;">
+
+                    <!---SECTION TWO GOES HERE-->
                 </p></div>
-             </div>
-             </div>   
         </div>
-	<div class="sign-up-step">
-	  <div class="container">
-            <div class=" title-port=" "="" center"="">
-              <p></p><center><span style="font-size:30px; color:black; align-content:center;">Testimonials</span></center><p></p>
-                </div></div>
-                </div>
-		<div>
-		<html>
-		<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-		* {box-sizing: border-box}
-		body {font-family: Verdana, sans-serif; margin:0}
+    </div>
+</div>
+<div class="sign-up-step">
+    <div class="container">
+        <div class=" title-port="
+        "="" center"="">
+        <p></p>
+        <center><span style="font-size:30px; color:black; align-content:center;">Testimonials</span></center>
+        <p></p>
+    </div>
+</div>
+</div>
+<div>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box
+            }
 
-		/* Slideshow container */
-		.slideshow-container {
-		  position: relative;
-		  background: #f1f1f1f1;
-		}
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
 
-		/* Slides */
-		.mySlides {
-		  display: none;
-		  padding: 80px;
-		  text-align: center;
-		}
+            /* Slideshow container */
+            .slideshow-container {
+                position: relative;
+                background: #f1f1f1f1;
+            }
 
-		/* Next & previous buttons */
-		.prev, .next {
-		  cursor: pointer;
-		  position: absolute;
-		  top: 50%;
-		  width: auto;
-		  margin-top: -30px;
-		  padding: 16px;
-		  color: #888;
-		  font-weight: bold;
-		  font-size: 20px;
-		  border-radius: 0 3px 3px 0;
-		  user-select: none;
-		}
+            /* Slides */
+            .mySlides {
+                display: none;
+                padding: 80px;
+                text-align: center;
+            }
 
-		/* Position the "next button" to the right */
-		.next {
-		  position: absolute;
-		  right: 0;
-		  border-radius: 3px 0 0 3px;
-		}
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -30px;
+                padding: 16px;
+                color: #888;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
 
-		/* On hover, add a black background color with a little bit see-through */
-		.prev:hover, .next:hover {
-		  background-color: rgba(0,0,0,0.8);
-		  color: white;
-		}
+            /* Position the "next button" to the right */
+            .next {
+                position: absolute;
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
 
-		/* The dot/bullet/indicator container */
-		.dot-container {
-		    text-align: center;
-		    padding: 20px;
-		    background: #ddd;
-		}
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
 
-		/* The dots/bullets/indicators */
-		.dot {
-		  cursor: pointer;
-		  height: 15px;
-		  width: 15px;
-		  margin: 0 2px;
-		  background-color: #bbb;
-		  border-radius: 50%;
-		  display: inline-block;
-		  transition: background-color 0.6s ease;
-		}
+            /* The dot/bullet/indicator container */
+            .dot-container {
+                text-align: center;
+                padding: 20px;
+                background: #ddd;
+            }
 
-		/* Add a background color to the active dot/circle */
-		.active, .dot:hover {
-		  background-color: #717171;
-		}
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
 
-		/* Add an italic font style to all quotes */
-		q {font-style: italic;}
+            /* Add a background color to the active dot/circle */
+            .active, .dot:hover {
+                background-color: #717171;
+            }
 
-		/* Add a blue color to the author */
-		.author {color: cornflowerblue;}
-		</style>
-		</head>
-		<body>
+            /* Add an italic font style to all quotes */
+            q {
+                font-style: italic;
+            }
 
-		<div class="slideshow-container">
+            /* Add a blue color to the author */
+            .author {
+                color: cornflowerblue;
+            }
+        </style>
+    </head>
+    <body>
 
-		<div class="mySlides">
-		  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
-		  <p class="author">- John Keats</p>
-		</div>
+    <div class="slideshow-container">
 
-		<div class="mySlides">
-		  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
-		  <p class="author">- Ernest Hemingway</p>
-		</div>
-
-		<div class="mySlides">
-		  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
-		  <p class="author">- Thomas A. Edison</p>
-		</div>
-
-		<a class="prev" onclick="plusSlides(-1)">❮</a>
-		<a class="next" onclick="plusSlides(1)">❯</a>
-
-		</div>
-
-		<div class="dot-container">
-		  <span class="dot" onclick="currentSlide(1)"></span> 
-		  <span class="dot" onclick="currentSlide(2)"></span> 
-		  <span class="dot" onclick="currentSlide(3)"></span> 
-		</div>
-
-		<script>
-		var slideIndex = 1;
-		showSlides(slideIndex);
-
-		function plusSlides(n) {
-		  showSlides(slideIndex += n);
-		}
-
-		function currentSlide(n) {
-		  showSlides(slideIndex = n);
-		}
-
-		function showSlides(n) {
-		  var i;
-		  var slides = document.getElementsByClassName("mySlides");
-		  var dots = document.getElementsByClassName("dot");
-		  if (n > slides.length) {slideIndex = 1}    
-		  if (n < 1) {slideIndex = slides.length}
-		  for (i = 0; i < slides.length; i++) {
-		      slides[i].style.display = "none";  
-		  }
-		  for (i = 0; i < dots.length; i++) {
-		      dots[i].className = dots[i].className.replace(" active", "");
-		  }
-		  slides[slideIndex-1].style.display = "block";  
-		  dots[slideIndex-1].className += " active";
-		}
-		</script>
-
-		</body>
-		</html> 
-          <!---SECTION ONE HERE-->
-          </div>  
+        <div class="mySlides">
+            <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+            <p class="author">- John Keats</p>
         </div>
-    
-        <!-- ***************** Body Ends Here ***************************** -->
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
+
+        <div class="mySlides">
+            <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+            <p class="author">- Ernest Hemingway</p>
+        </div>
+
+        <div class="mySlides">
+            <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+            <p class="author">- Thomas A. Edison</p>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    </body>
+    </html>
+    <!---SECTION ONE HERE-->
+</div>
+</div>
+
+<!-- ***************** Body Ends Here ***************************** -->
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
 </script>
 <body>
-<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div> 
+<div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div>
 
 <script>
-includeHTML();
+    includeHTML();
 </script>
 
 </body>
