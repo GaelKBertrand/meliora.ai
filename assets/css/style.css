@@ -75,7 +75,7 @@ color: #FFF; border-color: #6734bf }
 .actbtn{background-color: #5db442;  color: #FFF;}
 .features{padding: 30px;background-color: #f8f8f8;}
 .feature-box{padding: 20px;background-color: #FFF;text-align: center; margin-bottom: 20px;}
-.feature-box i{font-size: 33px; color: #5db442;padding: 20px 5px; border-bottom: 1px solid #CCC;}
+.feature-box i{font-size: 33px; color: #335d92;padding: 20px 5px; border-bottom: 1px solid #CCC;}
 .feature-box h3{font-size: 17px;}
 .feature-box p{font-weight: 300; color: #888; font-size: 13px;}
 .footer{background-color: #7a4b9e; padding: 30px; color: #FFF;}
