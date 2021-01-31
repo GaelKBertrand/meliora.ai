@@ -32,7 +32,7 @@ function includeHTML() {
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/Meliora%20Icon.ico">
 </head>
-<body>
+<body onload="resizeFeatureBoxes()">
 <div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div> 
 
 <script>
@@ -135,7 +135,22 @@ function includeHTML() {
       return;
     }
   }
-};
+}
+function resizeFeatureBoxes() {
+
+    let elements = document.getElementsByClassName("card feature-box");
+    let maxHeight = -1;
+    for (let i = 0, len = elements.length; i < len; i++) {
+        let elHeight = elements[i].clientHeight
+        if (elHeight > maxHeight) {
+            maxHeight = elHeight
+        }
+    }
+    for (let i = 0, len = elements.length; i < len; i++) {
+        elements[i].style.height = maxHeight + "px"
+    }
+}
+
 </script>
 <body>
 <div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div> 
