@@ -36,7 +36,7 @@
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/Meliora%20Icon.ico">
 </head>
-<body>
+<body onload="resizeAboutPans()">
 <div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/header.html"></div>
 
 <script>
@@ -66,9 +66,10 @@
         <div class="row">
             <div class="title-port center">
                 <p>About Us</p>
-            </div><div class="col-sm-6 abut">
-            <img src="assets/images/landing.png">
-        </div>
+            </div>
+            <div class="col-sm-6 abut">
+                <img src="assets/images/landing.png">
+            </div>
             <div style="font-size:20px;background-color:#7a4b9e;margin-bottom: 26px;" class="col-sm-6 abut-tst">
                 <p style="color:white;padding:25px;">
                     We harness the power of technology to assist medical professionals in the early detection of
@@ -91,42 +92,48 @@
     padding-bottom: 1px;
 ">
                 <p> The Team</p>
-            </div><div class="container">
+            </div>
+            <div class="container">
 
 
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="team-img card">
-                        <img src="assets/images/BertrandK.jpg">
-                        <p>Bertrand Kwibuka, Founder and AI engineer
-                        <br><br>
-                            Bertrand is passionate about economically sustainable solutions to modern world problems. He is a science and artificial intelligence enthusiast and frequently works on AI projects to create solutions to this world's problems.
-                        <br>
-                        </p>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="team-img card">
+                            <img src="assets/images/BertrandK.jpg">
+                            <p>Bertrand Kwibuka, Founder and AI engineer
+                                <br><br>
+                                Bertrand is passionate about economically sustainable solutions to modern world
+                                problems. He is a science and artificial intelligence enthusiast and frequently works on
+                                AI projects to create solutions to this world's problems.
+                                <br>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-img card">
-                        <img src="assets/images/Danylo.jpg">
-                        <p>Danylo Liakhovetskyi - Cofounder and Software Engineer
-                            <br><br>
-                           Danylo loves programming, especially creating underlying logic behind different systems, algorithms and using different programming paradigms for creating great products for the customers and himself.</p>
+                    <div class="col-sm-3">
+                        <div class="team-img card">
+                            <img src="assets/images/Danylo.jpg">
+                            <p>Danylo Liakhovetskyi - Cofounder and Software Engineer
+                                <br><br>
+                                Danylo loves programming, especially creating underlying logic behind different systems,
+                                algorithms and using different programming paradigms for creating great products for the
+                                customers and himself.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-img card">
-                        <img src="assets/images/Dylan.png">
-                        <p>Dylan Clayton - Developer</p>
+                    <div class="col-sm-3">
+                        <div class="team-img card">
+                            <img src="assets/images/Dylan.png">
+                            <p>Dylan Clayton - Developer</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-img card">
-                        <img src="assets/images/team-memb4.jpg">
-                        <p>frymatic - Mentor</p>
+                    <div class="col-sm-3">
+                        <div class="team-img card">
+                            <img src="assets/images/team-memb4.jpg">
+                            <p>frymatic - Mentor</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div></div>
+        </div>
     </div>
 </div>
 <!-- ***************** Body Ends Here ***************************** -->
@@ -162,6 +169,22 @@
             }
         }
     };
+
+    function resizeAboutPans() {
+
+        let elements = document.getElementsByClassName("team-img card");
+        let maxHeight = -1;
+        for (let i = 0, len = elements.length; i < len; i++) {
+            let elHeight = elements[i].clientHeight
+            if (elHeight > maxHeight) {
+                maxHeight = elHeight
+            }
+        }
+        for (let i = 0, len = elements.length; i < len; i++) {
+            elements[i].style.height = maxHeight + "px"
+        }
+
+    }
 </script>
 <body>
 <div w3-include-html="https://gaelkbertrand.github.io/meliora.ai/footer.html"></div>
