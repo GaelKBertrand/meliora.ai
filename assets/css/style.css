@@ -38,7 +38,7 @@ body{font-family: 'Myriad Pro';background-color: #7a4b9e;}
 .sm-linl li{float: left;list-style: none; color: #FFF; padding: 10px;}
 .in-contact li{float: right;list-style: none;color: #FFF; padding: 10px;}
 .nav-list li{float: right;list-style: none;padding: 20px 40px; font-size: 16px;}
-.nav-list li a{color: #262626;}
+.nav-list li a{color: #262626; font-weight: bold}
 .logo{padding:16px;}
 .logo b{font-weight: 600;color: #636666;font-size: 22px;}
 .slider{padding: 6px;}
